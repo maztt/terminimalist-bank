@@ -26,17 +26,26 @@ const bankInitialization = () => {
         .then(async response => {
             const action = response['action']
 
-            if (action === 'Open a new bank account') {
-                createAccount()
-            } else if (action === 'Check available balance') {
-                getAccountBalance()
-            } else if (action === 'Deposit') {
-                accountDeposit()
-            } else if (action === 'Withdraw') {
-                accountWithdraw()
-            } else if (action === 'Leave') {
-                console.log(chalk.bgBlue.black('Thank you for using Accounts!'))
-                process.exit()
+            switch (action) {
+                case 'Open a new bank account':
+                    createAccount()
+                    break
+                case 'Check available balance':
+                    getAccountBalance()
+                    break
+                case 'Deposit':
+                    accountDeposit()
+                    break
+                case 'Withdraw':
+                    accountWithdraw()
+                    break
+                case 'Leave':
+                    console.log(
+                        chalk.bgGreen.black(
+                            'Thank you for choosing Terminimalist Bank!'
+                        )
+                    )
+                    process.exit()
             }
         })
         .catch(err => console.log(err))
