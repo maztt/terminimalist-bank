@@ -8,4 +8,4 @@ const getAccount = accountName => {
     return JSON.parse(accountJSON)
 }
 
-export default getAccount
+export { getAccount }

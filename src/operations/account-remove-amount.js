@@ -1,7 +1,6 @@
 import chalk from 'chalk'
 import fs from 'fs'
-import getAccount from './account-get.js'
-import accountWithdraw from './account-withdraw.js'
+import { getAccount, accountWithdraw } from './index.js'
 import main from '../../main.js'
 
 const accountRemoveAmount = (accountName, amount) => {
@@ -39,4 +38,4 @@ const accountRemoveAmount = (accountName, amount) => {
     return main()
 }
 
-export default accountRemoveAmount
+export { accountRemoveAmount }

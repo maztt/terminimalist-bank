@@ -10,4 +10,4 @@ const checkAccount = accountName => {
     }
 }
 
-export default checkAccount
+export { checkAccount }

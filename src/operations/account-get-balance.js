@@ -1,7 +1,6 @@
 import inquirer from 'inquirer'
 import chalk from 'chalk'
-import checkAccount from './account-check.js'
-import getAccount from './account-get.js'
+import { checkAccount, getAccount } from './index.js'
 import main from '../../main.js'
 
 const getAccountBalance = () => {
@@ -36,4 +35,4 @@ const getAccountBalance = () => {
         .catch(err => console.log(err))
 }
 
-export default getAccountBalance
+export { getAccountBalance }

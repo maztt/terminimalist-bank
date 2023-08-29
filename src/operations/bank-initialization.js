@@ -1,9 +1,11 @@
 import inquirer from 'inquirer'
 import chalk from 'chalk'
-import createAccount from './account-create.js'
-import getAccountBalance from './account-get-balance.js'
-import accountDeposit from './account-deposit.js'
-import accountWithdraw from './account-withdraw.js'
+import {
+    createAccount,
+    getAccountBalance,
+    accountDeposit,
+    accountWithdraw
+} from './index.js'
 
 const bankInitialization = () => {
     inquirer
@@ -40,4 +42,4 @@ const bankInitialization = () => {
         .catch(err => console.log(err))
 }
 
-export default bankInitialization
+export { bankInitialization }

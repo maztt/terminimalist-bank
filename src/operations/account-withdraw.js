@@ -1,6 +1,5 @@
 import inquirer from 'inquirer'
-import accountRemoveAmount from './account-remove-amount.js'
-import checkAccount from './account-check.js'
+import { accountRemoveAmount, checkAccount } from './index.js'
 import main from '../../main.js'
 
 const accountWithdraw = (accountName, amount) => {
@@ -39,4 +38,4 @@ const accountWithdraw = (accountName, amount) => {
         .catch(err => console.log(err))
 }
 
-export default accountWithdraw
+export { accountWithdraw }

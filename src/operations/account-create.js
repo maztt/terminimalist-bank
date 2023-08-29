@@ -14,8 +14,7 @@ const createAccount = () => {
         .then(response => {
             const accountName = response['accountName']
 
-            if (!fs.existsSync('src/db'))
-                fs.mkdirSync('src/db')
+            if (!fs.existsSync('src/db')) fs.mkdirSync('src/db')
 
             if (fs.existsSync(`src/db/${accountName}.json`)) {
                 console.log(
@@ -43,4 +42,4 @@ const createAccount = () => {
         .catch(err => console.log(err))
 }
 
-export default createAccount
+export { createAccount }

@@ -1,6 +1,5 @@
 import inquirer from 'inquirer'
-import accountAddAmount from './account-add-amount.js'
-import checkAccount from './account-check.js'
+import { accountAddAmount, checkAccount } from './index.js'
 import main from '../../main.js'
 
 const accountDeposit = () => {
@@ -37,4 +36,4 @@ const accountDeposit = () => {
         .catch(err => console.log(err))
 }
 
-export default accountDeposit
+export { accountDeposit }

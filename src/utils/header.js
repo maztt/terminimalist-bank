@@ -6,4 +6,4 @@ const header = () => {
     console.log(chalk.bgGreen.black('------------------'))
 }
 
-export default header
+export { header }

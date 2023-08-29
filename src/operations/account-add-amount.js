@@ -1,6 +1,6 @@
 import chalk from 'chalk'
 import fs from 'fs'
-import getAccount from './account-get.js'
+import { getAccount } from './index.js'
 
 const accountAddAmount = (accountName, amount) => {
     const accountData = getAccount(accountName)
@@ -25,4 +25,4 @@ const accountAddAmount = (accountName, amount) => {
     )
 }
 
-export default accountAddAmount
+export { accountAddAmount }
