@@ -13,7 +13,7 @@ const accountAddAmount = (accountName, amount) => {
     accountData.balance = parseFloat(amount) + parseFloat(accountData.balance)
 
     fs.writeFileSync(
-        `src/db-accounts/${accountName}.json`,
+        `src/db/${accountName}.json`,
         JSON.stringify(accountData),
         err => console.log(err)
     )

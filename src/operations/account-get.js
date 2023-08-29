@@ -1,7 +1,7 @@
 import fs from 'fs'
 
 const getAccount = accountName => {
-    const accountJSON = fs.readFileSync(`src/db-accounts/${accountName}.json`, {
+    const accountJSON = fs.readFileSync(`src/db/${accountName}.json`, {
         encoding: 'utf8',
         flag: 'r'
     })

@@ -26,7 +26,7 @@ const accountRemoveAmount = (accountName, amount) => {
     accountData.balance = parseFloat(accountData.balance) - parseFloat(amount)
 
     fs.writeFileSync(
-        `src/db-accounts/${accountName}.json`,
+        `src/db/${accountName}.json`,
         JSON.stringify(accountData),
         err => console.log(err)
     )

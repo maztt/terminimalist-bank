@@ -14,10 +14,10 @@ const createAccount = () => {
         .then(response => {
             const accountName = response['accountName']
 
-            if (!fs.existsSync('src/db-accounts'))
-                fs.mkdirSync('src/db-accounts')
+            if (!fs.existsSync('src/db'))
+                fs.mkdirSync('src/db')
 
-            if (fs.existsSync(`src/db-accounts/${accountName}.json`)) {
+            if (fs.existsSync(`src/db/${accountName}.json`)) {
                 console.log(
                     chalk.bgRed.black(
                         'The username you tried is already in use! Please choose a different one.'
@@ -27,7 +27,7 @@ const createAccount = () => {
             }
 
             fs.writeFileSync(
-                `src/db-accounts/${accountName}.json`,
+                `src/db/${accountName}.json`,
                 '{"balance": 0}',
                 err => {
                     console.log(err)
