@@ -40,15 +40,12 @@ const bankInitialization = () => {
                     accountWithdraw()
                     break
                 case 'Leave':
-                    console.log(
-                        chalk.bgGreen.black(
-                            'Thank you for choosing Terminimalist Bank!'
-                        )
-                    )
+                    console.log(chalk.bgGreen.black('\nThank you for choosing Terminimalist Bank!'))
+                    console.log(chalk.bgGray.black('Logging off... '))
                     process.exit()
             }
         })
-        .catch(err => console.log(err))
+        .catch(err => console.error(err))
 }
 
 export { bankInitialization }

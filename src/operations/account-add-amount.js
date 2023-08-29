@@ -1,12 +1,12 @@
 import chalk from 'chalk'
 import fs from 'fs'
-import { getAccount } from './index.js'
+import { getAccount, accountDeposit } from './index.js'
 
-const accountAddAmount = (accountName, amount) => {
+const accountAddAmount = async (accountName, amount) => {
     const accountData = getAccount(accountName)
 
     if (!amount) {
-        console.log('You have not specified the amount! Returning try again.')
+        console.log('You have not specified the amount! Try again.\n')
         return accountDeposit()
     }
 
@@ -15,14 +15,10 @@ const accountAddAmount = (accountName, amount) => {
     fs.writeFileSync(
         `src/db/${accountName}.json`,
         JSON.stringify(accountData),
-        err => console.log(err)
+        err => console.error(err)
     )
 
-    console.log(
-        chalk.green(
-            `You have just deposited $${amount} to ${accountName}'s account.`
-        )
-    )
+    console.log(chalk.green(`You have just deposited $${amount} to ${accountName}'s account.\n`))
 }
 
 export { accountAddAmount }
